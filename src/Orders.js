@@ -3,7 +3,9 @@ import React from "react";
 import RestaurantButton from "./RestaurantButton";
 
 const Orders = props => {
-  let [orders, setOrders] = useState(0);
+  console.log(props.orderType);
+
+  const [orders, setOrders] = useState(0);
 
   const orderOne = () => {
     setOrders(orders + 1);
@@ -11,10 +13,11 @@ const Orders = props => {
 
   return (
     <>
-      <RestaurantButton order={orderOne} />
-      <li>
+      <p>
         {props.orderType}: {orders}
-      </li>
+        <br />
+        <RestaurantButton order={orderOne} />
+      </p>
     </>
   );
 };

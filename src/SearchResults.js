@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 
 const SearchResults = props => {
+  const [selectedRow, setSelectedRow] = useState();
+
+  /*const rowIsSelected = () => {
+    setSelectedRow(true);
+    setHighlightColor((selectedRow) => {
+      return "table-success";
+    });*/
+
+  const clickHandler = ind => {
+    return selectedRow === ind ? setSelectedRow(null) : setSelectedRow(ind);
+  };
+
+  console.log(selectedRow);
+
   return (
     <table className="table">
       <thead>
@@ -19,7 +33,11 @@ const SearchResults = props => {
       </thead>
       <tbody>
         {props.results.map((props, index) => (
-          <tr key={index}>
+          <tr
+            key={props.id}
+            onClick={() => clickHandler(index)}
+            className={selectedRow === index ? "table-success" : ""}
+          >
             <td>{props.id}</td>
             <td>{props.title}</td>
             <td>{props.firstName}</td>
