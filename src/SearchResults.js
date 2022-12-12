@@ -4,17 +4,9 @@ import moment from "moment";
 const SearchResults = props => {
   const [selectedRow, setSelectedRow] = useState();
 
-  /*const rowIsSelected = () => {
-    setSelectedRow(true);
-    setHighlightColor((selectedRow) => {
-      return "table-success";
-    });*/
-
   const clickHandler = ind => {
     return selectedRow === ind ? setSelectedRow(null) : setSelectedRow(ind);
   };
-
-  console.log(selectedRow);
 
   return (
     <table className="table">
