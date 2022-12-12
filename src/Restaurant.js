@@ -1,15 +1,13 @@
 import React from "react";
 import Orders from "./Orders";
-import { useState } from "react";
+// import { useState } from "react";
 
 const Restaurant = () => {
-  let [orders, setOrders] = useState(0);
+  // let [orders, setOrders] = useState(0);
 
-  const orderOne = () => {
+  /*const orderOne = () => {
     setOrders(orders + 1);
-  };
-
-  console.log(typeof orderOne);
+  };*/
 
   return (
     <div>

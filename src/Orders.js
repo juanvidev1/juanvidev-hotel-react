@@ -3,8 +3,6 @@ import React from "react";
 import RestaurantButton from "./RestaurantButton";
 
 const Orders = props => {
-  console.log(props.orderType);
-
   const [orders, setOrders] = useState(0);
 
   const orderOne = () => {
